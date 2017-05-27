@@ -10,5 +10,10 @@ class Page(Base):
     slug = Column(String(200), unique=True)
     text = Column(Text)
 
+    def __init__(self, title, slug, text):
+        self.title = title
+        self.slug = slug
+        self.text = text
+
     def __unicode__(self):
         return self.title

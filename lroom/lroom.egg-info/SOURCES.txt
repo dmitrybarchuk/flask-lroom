@@ -1,4 +1,7 @@
 lroom/__init__.py
+lroom/config.py
+lroom/database.py
+lroom/models.py
 lroom/views.py
 lroom.egg-info/PKG-INFO
 lroom.egg-info/SOURCES.txt
