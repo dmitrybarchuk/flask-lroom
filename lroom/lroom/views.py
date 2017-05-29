@@ -30,4 +30,4 @@ def edit_page():
     db_session.add(form)
     db_session.commit()
     flash('Entry was successfully changed')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('page'))

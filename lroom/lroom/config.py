@@ -1,3 +1,6 @@
-SECRET_KEY = 'dfuyguUHHKJhhgkhYT*&(Y(*YT(TI&^ruGJHFJVJHVNMbmnvhvmnvj'
+from lroom import app
 
-DEBUG = True
+
+app.secret_key = 'dfuyguUHHKJhhgkhYT*&(Y(*YT(TI&^ruGJHFJVJHVNMbmnvhvmnvj'
+
+app.debug = True
