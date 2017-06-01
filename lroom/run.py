@@ -1,5 +1,5 @@
-import local_settings
+import settings
 from app import app
 
 if __name__ == '__main__':
-    app.run(debug=local_settings.DEBUG)
+    app.run(debug=settings.DEBUG)

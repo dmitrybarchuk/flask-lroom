@@ -9,11 +9,5 @@ class Page(db.Model):
     text = db.Column(db.Text, nullable=True)
     published = db.Column(db.Boolean, default=True)
 
-    def __init__(self, title, slug, text, published):
-        self.title = title
-        self.slug = slug
-        self.text = text
-        self.published = published
-
     def __unicode__(self):
         return self.title

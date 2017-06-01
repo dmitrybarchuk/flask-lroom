@@ -2,5 +2,13 @@
 
 {% block edit %}
     <h1>Edit {{ page.title }}</h1>
-    {{ page.text }}
+    <form method="POST" enctype="multipart/form-data">
+        {% for field in form %}
+            <tr>
+                <th>{{ field.label }}</th>
+                <td>{{ field }}</td>
+            </tr>
+        {% endfor %}
+        <button type="submit">Сохранить</button>
+    </form>
 {% endblock %}

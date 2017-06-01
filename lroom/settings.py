@@ -1,8 +1,12 @@
 import os
 
 DEBUG = False
-basedir = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-db = 'sqlite:///' + os.path.join(basedir, 'lroom.sqlite')
+DB = 'sqlite:///' + os.path.join(BASE_DIR, 'lroom.sqlite')
+SECRET_KEY = 'GHFhVGcgfcTR^%rT678tUY7ftVFhgch'
 
-import local_settings
+try:
+    from local_settings import *
+except:
+    pass

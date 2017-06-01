@@ -1,7 +1,7 @@
 # coding:utf-8
-from flask import render_template, request
-
-from app import app
+from flask import render_template, request, flash, redirect, url_for
+from forms import PageForm
+from app import app, db
 from app.models import Page
 
 
@@ -17,9 +17,17 @@ def page(page_slug):
 
 @app.route('/<page_slug>/edit/', methods=['GET', 'POST'])
 def page_edit(page_slug):
-    page = Page.query.filter_by(slug=page_slug).first()
-    if page:
-        return render_template('page_form.html', page=page)
+    item = Page.query.filter_by(slug=page_slug).first()
+    form = PageForm(request.form, item)
+
+    if request.method == 'POST' and form.validate():
+        # todo: validation of form
+        form.populate_obj(request.form)
+        db.session.commit()
+        flash(u'Страница %s сохранена' % form.title.data)
+        return redirect(url_for('page', page_slug=page_slug))
+
+    return render_template('page_form.html', form=form, page=item)
 
 
 @app.errorhandler(404)
