@@ -1,5 +1,9 @@
-from flask_wtf import FlaskForm
-from wtforms.ext.sqlalchemy.orm import model_form
-from app.models import Page
+# coding:utf-8
+from wtforms import Form, BooleanField, StringField, validators, TextAreaField, SubmitField
 
-PageForm = model_form(Page, FlaskForm)
+
+class PageForm(Form):
+    title = StringField(u'Заголовок страницы', [validators.InputRequired(message=u'Поле обязательно для заполнения'), validators.Length(max=200)])
+    slug = StringField(u'slug', [validators.InputRequired(message=u'Поле обязательно для заполнения'), validators.Length(max=200)])
+    text = TextAreaField(u'Содержимое страницы')
+    published = BooleanField(u'Опубликовано')

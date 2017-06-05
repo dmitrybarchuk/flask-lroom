@@ -1,1 +1,30 @@
 @import "variables";
+
+
+body {
+  background: $bg;
+  color: black;
+
+  .content,
+  .menu {
+    background-color: white;
+  }
+
+  .menu {
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        float: left;
+        margin-right: 1rem;
+
+        a {
+          padding: 1rem 2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-12 menu">
+        <nav>
+            <ul>
+                {%  for item in menu %}
+                    <li{% if item.slug == page.slug %} class="active">{{ item.title }}{% else %}>
+                        <a href="{{  url_for('page', page_slug=item.slug) }}">{{ item.title }}</a>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</div>

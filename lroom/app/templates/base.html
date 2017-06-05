@@ -8,21 +8,23 @@
     {% endassets %}
 </head>
 <body>
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-      <li>{{ message }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
+<div class="container">
+    {% include 'menu.html' %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
 
-{% block content %}
-{% endblock %}
-{% block edit %}
-{% endblock %}
-
+    {% block content %}
+    {% endblock %}
+    {% block edit %}
+    {% endblock %}
+</div>
 {% assets "script" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}

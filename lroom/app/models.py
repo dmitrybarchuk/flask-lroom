@@ -11,3 +11,7 @@ class Page(db.Model):
 
     def __unicode__(self):
         return self.title
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()

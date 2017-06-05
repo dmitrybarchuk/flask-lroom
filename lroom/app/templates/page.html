@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Страница &laquo;{{ page.title }}&raquo;</h1>
-    <p>{{ page.text }}</p>
+    <div class="row">
+        <div class="col-xs-12 content">
+            <h1>Страница &laquo;{{ page.title }}&raquo;</h1>
+            <p>{{ page.text }}</p>
+        </div>
+    </div>
 {% endblock %}
