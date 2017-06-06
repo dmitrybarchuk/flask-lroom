@@ -1,7 +1,7 @@
 # coding:utf-8
 from flask import render_template, request, flash, redirect, url_for
-from forms import PageForm
-from app import app, db
+from forms import PageForm, GalleryForm
+from app import app
 from app.models import Page
 
 
@@ -38,6 +38,11 @@ def page_edit(page_id):
         return redirect(url_for('admin'))
     else:
         return render_template('page_form.html', form=form)
+
+
+@app.route('/admin/gallery/<gallery_id>', methods=['GET', 'POST'])
+def gallery(gallery_id):
+    return render_template('gallery_form.html', form=GalleryForm())
 
 
 @app.errorhandler(404)
